@@ -38,11 +38,9 @@
           <i class="fa fa-bars"></i> All category 
         </button>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Shirts</a>
-          <a class="dropdown-item" href="#">Jeans</a>
-          <a class="dropdown-item" href="#">Shoes</a>
-          <a class="dropdown-item" href="#">Jackets</a>
-          <a class="dropdown-item" href="#">T-Shirts</a>
+          {% for category in links %}
+          <a class="dropdown-item" href="{{ category.get_url }}">{{ category.category_name }}</a>
+          {% endfor %}
           <!-- <a class="dropdown-item" href="#">Beauty & Personal Care / Health </a>  -->
         </div>
       </div>  <!-- category-wrap.// -->
