@@ -21,5 +21,5 @@ class Product(models.Model):
     def get_url(self):    
         return reverse('product_detail', args=[self.category.slug, self.slug]) #call function use name
 
-    def __str__(self):
-        return self.product_name
+    # def __str__(self):
+    #     return self.product_name
