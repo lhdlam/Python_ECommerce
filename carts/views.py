@@ -36,6 +36,8 @@ def add_cart(request, product_id):
   
 def cart(request, total=0, quantity=0, cart_items=None):
   try:
+    tax = 0
+    grand_total = 0
     cart = Cart.objects.get(cart_id=_cart_id(request))
     cart_items = CartItem.objects.filter(cart=cart, is_active =True)
     for cart_item in cart_items:
@@ -58,8 +60,8 @@ def remove_cart(request, product_id):
     cart = Cart.objects.get(cart_id =_cart_id(request))
     product = get_object_or_404(Product, id=product_id)
     cart_item = CartItem.objects.get(product=product, cart=cart)
-    print('cart', cart)
-    print('product', product)
+    # print('cart', cart)
+    # print('product', product)
     # print('cart_item', cart_item)
 
     if cart_item.quantity > 1:

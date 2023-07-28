@@ -68,6 +68,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'category.context_processors.menu_links', #setting default use function menu_links => return links => store.html
+                'carts.context_processors.counter', # count product in cart 
             ],
         },
     },
