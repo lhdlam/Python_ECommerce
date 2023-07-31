@@ -47,7 +47,6 @@ def add_cart(request, product_id):
           ex_var_list.append(list(existing_variation))
           id.append(item.id)
 
-      print(ex_var_list)
 
       if product_variation in ex_var_list:
           # increase the cart item quantity
